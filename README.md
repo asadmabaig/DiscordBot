@@ -1,4 +1,5 @@
-# Computer Science Year 2 - Group Project: Discord Bot
+## Year 2: Professional Development
+## Group Project: Discord Bot
 
 This bot requires dotenv, puppeteer, and imdb-api, to install:
 
