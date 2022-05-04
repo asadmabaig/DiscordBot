@@ -295,40 +295,40 @@ client.on("messageCreate", (message) => {
 	//emoji embed
 	if (message.content.startsWith("!emoji")) {
 
-        async function emojiEmbed() {
-        
-            const embedPre = "https://cdn.discordapp.com/emojis/";
-            const hasEmoteRegex = /<a?:.+:\d+>/gm;
-            const pngRegex = /<:.+:(\d+)>/gm;
-            const gifRegex = /<a:.+:(\d+)>/gm;
+		async function emojiEmbed() {
 
-            const msgInfo = await message.fetch();
-            let msgContent = msgInfo.content.match(hasEmoteRegex);
-            
-            // console.log(msgInfo); //for testing
-            // console.log(message.content); //for testing
-            // console.log(msgContent); //for testing
-            
-            //uses regex to split the content into array
-            //then replies with url
-            if (msgContent = pngRegex.exec(message.content)) {
-                const url = embedPre + msgContent[1] + ".png?v=1"
-                message.channel.send(url)
-            }
-            else if (msgContent = gifRegex.exec(message.content)) {
-                const url = embedPre + msgContent[1] + ".gif?v=1"
-                message.channel.send(url)
-            }
-            else {
-                message.channel.send("No custom emoji found.")
-            }
+			const embedPre = "https://cdn.discordapp.com/emojis/";
+			const hasEmoteRegex = /<a?:.+:\d+>/gm;
+			const pngRegex = /<:.+:(\d+)>/gm;
+			const gifRegex = /<a:.+:(\d+)>/gm;
 
-            // console.log(msgContent); //for testing
-        }
+			const msgInfo = await message.fetch();
+			let msgContent = msgInfo.content.match(hasEmoteRegex);
 
-        emojiEmbed();
-        
-    }
+			// console.log(msgInfo); //for testing
+			// console.log(message.content); //for testing
+			// console.log(msgContent); //for testing
+
+			//uses regex to split the content into array
+			//then replies with url
+			if (msgContent = pngRegex.exec(message.content)) {
+				const url = embedPre + msgContent[1] + ".png?v=1"
+				message.channel.send(url)
+			}
+			else if (msgContent = gifRegex.exec(message.content)) {
+				const url = embedPre + msgContent[1] + ".gif?v=1"
+				message.channel.send(url)
+			}
+			else {
+				message.channel.send("No custom emoji found.")
+			}
+
+			// console.log(msgContent); //for testing
+		}
+
+		emojiEmbed();
+
+	}
 
 });
 
