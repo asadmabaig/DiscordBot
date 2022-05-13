@@ -216,7 +216,7 @@ client.on("messageCreate", (message) => {
 		async function tldr() {
 			const browser = await puppeteer.launch();
 			const page = await browser.newPage();
-			await page.screenshot({path: "screenshots\\test1.png"});
+			await page.screenshot({path: "screenshots/test1.png"});
 
 			// await page.goto("https://pastebin.com/login");
 			// await page.click('body > div.wrap > div.header > div > div > div.header__right > div > a.btn-sign.sign-in');
@@ -225,27 +225,27 @@ client.on("messageCreate", (message) => {
 			// couldn't get the login to work because puppeteer keeps getting timed out with cloudflare
 
 			await page.goto("https://pastebin.com/");
-			await page.screenshot({path: "screenshots\\test2.png"});
+			await page.screenshot({path: "screenshots/test2.png"});
 			await page.click("#qc-cmp2-ui > div.qc-cmp2-footer.qc-cmp2-footer-overlay.qc-cmp2-footer-scrolled > div > button.sc-ifAKCX.ljEJIv"); //privacy agreement
-			await page.screenshot({path: "screenshots\\test3.png"});
+			await page.screenshot({path: "screenshots/test3.png"});
 			await page.type("#postform-text", pastebinText);
-			await page.screenshot({path: "screenshots\\test4.png"});
+			await page.screenshot({path: "screenshots/test4.png"});
 
 			//selects the expiration of paste to 10 minutes
 			await page.click("#select2-postform-expiration-container");
-			await page.screenshot({path: "screenshots\\test5.png"});
+			await page.screenshot({path: "screenshots/test5.png"});
 			await page.click("#select2-postform-expiration-results > li:nth-child(3)");
-			await page.screenshot({path: "screenshots\\test6.png"});
+			await page.screenshot({path: "screenshots/test6.png"});
 
 			//select the exposure as unlisted
 			await page.click("#select2-postform-status-container");
-			await page.screenshot({path: "screenshots\\test7.png"});
+			await page.screenshot({path: "screenshots/test7.png"});
 			await page.click("#select2-postform-status-results > li:nth-child(2)");
-			await page.screenshot({path: "screenshots\\test8.png"});
+			await page.screenshot({path: "screenshots/test8.png"});
 
 			//submit the paste
 			await page.click("#w0 > div.post-form__bottom > div.post-form__left > div.form-group.form-btn-container > button");
-			await page.screenshot({path: "screenshots\\test9.png"});
+			await page.screenshot({path: "screenshots/test9.png"});
 			await page.waitForNavigation();
 
 			//retrieve the new url
